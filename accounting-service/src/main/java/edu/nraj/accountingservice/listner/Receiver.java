@@ -24,7 +24,7 @@ public class Receiver {
         System.out.println("Processing here to verify accounting...");
         order.setOrderStatus(OrderStatus.CARD_AUTHORIZED);
 //        order.setOrderStatus(OrderStatus.CARD_NOT_AUTHORIZED);
-        System.out.println("saving the order with state: " + order.getOrderStatus());
+        System.out.println("saving the order with state : " + order.getOrderStatus());
         accountingRepository.saveAndFlush(order);
 
         Thread.sleep(5000);
