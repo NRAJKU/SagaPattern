@@ -18,7 +18,7 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class SagaService {
+public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderStateChangeInterceptor orderStateChangeInterceptor;
     private final StateMachineFactory<OrderState, OrderEvent> stateMachineFactory;

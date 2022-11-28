@@ -28,11 +28,6 @@ public class OrderStatemachineConfig extends StateMachineConfigurerAdapter<Order
 
     @Override
     public void configure(StateMachineStateConfigurer<OrderState, OrderEvent> states) throws Exception {
-//        states.withStates()
-//                .initial(OrderState.VERIFYING_CONSUMER)
-//                .states(EnumSet.allOf(OrderState.class))
-//                .end(OrderState.ORDER_APPROVED)
-//                .end(OrderState.REJECTED);
         states.withStates()
                 .initial(OrderState.INITIAL)
                 .states(EnumSet.allOf(OrderState.class))

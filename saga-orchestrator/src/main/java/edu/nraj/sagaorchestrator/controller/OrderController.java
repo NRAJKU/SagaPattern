@@ -1,7 +1,7 @@
 package edu.nraj.sagaorchestrator.controller;
 
 import edu.nraj.sagaorchestrator.model.Order;
-import edu.nraj.sagaorchestrator.service.SagaService;
+import edu.nraj.sagaorchestrator.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class OrderController {
     @Autowired
-    private final SagaService sagaService;
+    private final OrderService sagaService;
 
     @PostMapping("/order")
     public ResponseEntity restaurantOrder(@RequestBody Order order) throws Exception {
