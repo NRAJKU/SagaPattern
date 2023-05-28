@@ -22,7 +22,7 @@ public class OrderQueueListener {
     public void onMessage(OrderCommand message) {
         Order order = orderRepository.findByOrderId(message.orderId);
 
-        switch(order.orderStatus) {
+        switch(order.getOrderStatus()) {
             case CARD_AUTHORIZED:
                 order.setOrderStatus(OrderStatus.ORDER_APPROVED);
                 System.out.println("Processing here to reject order...");

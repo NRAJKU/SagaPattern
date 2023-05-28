@@ -13,5 +13,4 @@ public enum OrderStatus {
 
     REJECTED_CONSUMER_NOT_VERIFIED,
     REJECTED_TICKET_NOT_CREATED
-
 }

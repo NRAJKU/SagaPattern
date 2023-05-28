@@ -26,7 +26,7 @@ public class Receiver {
         System.out.println("saving the order with state: " + order.getOrderStatus());
         consumerRepository.saveAndFlush(order);
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         rabbitTemplate.convertAndSend("amqp.topic", "saga", order);
     }

@@ -28,7 +28,7 @@ public class Receiver {
 //                order.setOrderStatus(OrderStatus.TICKET_NOT_CREATED);
                 System.out.println("saving the order with state: " + order.getOrderStatus());
                 kitchenRepository.saveAndFlush(order);
-                Thread.sleep(5000);
+                Thread.sleep(10000);
                 rabbitTemplate.convertAndSend("amqp.topic", "saga", order);
                 break;
             case CARD_AUTHORIZED:

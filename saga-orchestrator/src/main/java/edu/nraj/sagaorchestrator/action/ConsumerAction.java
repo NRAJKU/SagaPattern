@@ -24,7 +24,7 @@ public class ConsumerAction implements Action<OrderState, OrderEvent> {
         System.out.println("orderId id" + orderId);
         Order order = orderRepository.findByOrderId(orderId);
         System.out.println("orderId status" + order.getOrderStatus());
-        OrderCommand command = new OrderCommand(order.orderId, order.orderStatus);
+        OrderCommand command = new OrderCommand(order.getOrderId(), order.getOrderStatus());
 
         rabbitTemplate.convertAndSend("amqp.topic", "consumer", command);
     }
